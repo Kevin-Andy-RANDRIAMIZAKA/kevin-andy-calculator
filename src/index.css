@@ -1,0 +1,110 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  --font-display: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+}
+
+:root,
+[data-theme='light'] {
+  --bg-base: #fafafa;
+  --bg-ambient-1: rgba(99, 102, 241, 0.06);
+  --bg-ambient-2: rgba(14, 165, 233, 0.05);
+  --bg-ambient-3: rgba(168, 85, 247, 0.04);
+  --text-primary: #0a0a0a;
+  --text-secondary: #525252;
+  --text-tertiary: #a3a3a3;
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.8);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+  --card-border: rgba(0, 0, 0, 0.06);
+  --display-bg: rgba(0, 0, 0, 0.03);
+  --btn-number: rgba(0, 0, 0, 0.04);
+  --btn-number-hover: rgba(0, 0, 0, 0.07);
+  --btn-function: rgba(0, 0, 0, 0.06);
+  --btn-function-hover: rgba(0, 0, 0, 0.1);
+  --btn-operator: rgba(99, 102, 241, 0.1);
+  --btn-operator-hover: rgba(99, 102, 241, 0.16);
+  --btn-operator-text: #4f46e5;
+  --btn-equals: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  --btn-equals-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+  --accent: #4f46e5;
+  --error: #ef4444;
+  --history-bg: rgba(255, 255, 255, 0.6);
+  --history-hover: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme='dark'] {
+  --bg-base: #050505;
+  --bg-ambient-1: rgba(99, 102, 241, 0.08);
+  --bg-ambient-2: rgba(14, 165, 233, 0.05);
+  --bg-ambient-3: rgba(168, 85, 247, 0.06);
+  --text-primary: #fafafa;
+  --text-secondary: #a3a3a3;
+  --text-tertiary: #525252;
+  --glass-bg: rgba(23, 23, 23, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --display-bg: rgba(255, 255, 255, 0.04);
+  --btn-number: rgba(255, 255, 255, 0.06);
+  --btn-number-hover: rgba(255, 255, 255, 0.1);
+  --btn-function: rgba(255, 255, 255, 0.08);
+  --btn-function-hover: rgba(255, 255, 255, 0.12);
+  --btn-operator: rgba(99, 102, 241, 0.15);
+  --btn-operator-hover: rgba(99, 102, 241, 0.22);
+  --btn-operator-text: #818cf8;
+  --btn-equals: linear-gradient(135deg, #6366f1 0%, #818cf8 100%);
+  --btn-equals-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+  --accent: #818cf8;
+  --error: #f87171;
+  --history-bg: rgba(23, 23, 23, 0.6);
+  --history-hover: rgba(255, 255, 255, 0.06);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.2);
+}
+
+/* Scrollbar styling */
+.history-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.history-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.history-scroll::-webkit-scrollbar-thumb {
+  background: var(--text-tertiary);
+  border-radius: 4px;
+}
